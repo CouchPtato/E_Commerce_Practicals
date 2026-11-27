@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoply</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #242424;
+            background: #faf7f2;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 20px;
+        }
+        .logo { color: #1d5944; font-size: 24px; font-weight: bold; }
+        nav a { color: #242424; margin-left: 18px; text-decoration: none; }
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 50px;
+        }
+        header {
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, rgba(24,68,52,.92), rgba(24,68,52,.25)),
+                        url("https://picsum.photos/1000/450") center/cover;
+            color: white;
+        }
+        header div { max-width: 480px; }
+        h1 { margin: 8px 0 14px; font-size: 52px; line-height: 1.05; }
+        .tag { color: #dff58a; font-weight: bold; letter-spacing: 1px; }
+        .shop-button {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 12px 22px;
+            border-radius: 8px;
+            background: #dff58a;
+            color: #184434;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section { margin-top: 30px; }
+        h2 { margin: 0 0 18px; color: #184434; }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 7px 20px rgba(45, 52, 38, .08);
+        }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card div { padding: 16px; }
+        .card h3 { margin: 0 0 6px; }
+        .price { color: #d26c45; font-size: 18px; font-weight: bold; }
+        .card button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 10px;
+            border: 0;
+            border-radius: 7px;
+            background: #184434;
+            color: white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 18px;
+        }
+        .panel {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee9df; }
+        th { color: #184434; }
+        ul { line-height: 2; padding-left: 20px; }
+        form { display: grid; gap: 10px; }
+        input, select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ddd6ca;
+            border-radius: 7px;
+        }
+        form button {
+            padding: 12px;
+            border: 0;
+            border-radius: 7px;
+            background: #d26c45;
+            color: white;
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            nav a { display: none; }
+            h1 { font-size: 38px; }
+            header { min-height: 300px; padding: 30px; }
+            .products, .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Shoply</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#offers">Offers</a>
+            <a href="#account">Account</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <div>
+                <span class="tag">NEW COLLECTION</span>
+                <h1>Style for every day</h1>
+                <p>Discover fresh favorites at prices you'll love.</p>
+                <a class="shop-button" href="#products">Shop Now</a>
+            </div>
+        </header>
+
+        <section id="products">
+            <h2>Popular Products</h2>
+            <div class="products">
+                <article class="card">
+                    <img src="https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/1898/best-adidas-classic-sneakers-guide-18414782-main.jpg" alt="Stylish shoes">
+                    <div>
+                        <h3>Classic Sneakers</h3>
+                        <p class="price">$49.99</p>
+                        <button type="button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgfn3xm8Gs9T_zhX6cPprcPF_xptA4sn_xyWdw85g4Aw&s=10" alt="Modern bag">
+                    <div>
+                        <h3>Everyday Tote</h3>
+                        <p class="price">$29.99</p>
+                        <button type="button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG5c6P99cmTL4EAjJwvWyrOFpyBuMhAe5m_odzTJnwDw&s=10" alt="Smart watch">
+                    <div>
+                        <h3>Modern Watch</h3>
+                        <p class="price">$79.99</p>
+                        <button type="button">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="offers" class="grid">
+            <div class="panel">
+                <h2>Today's Deals</h2>
+                <table>
+                    <tr><th>Category</th><th>Item</th><th>Discount</th></tr>
+                    <tr><td>Fashion</td><td>Summer Collection</td><td>30% Off</td></tr>
+                    <tr><td>Electronics</td><td>Smart Accessories</td><td>20% Off</td></tr>
+                    <tr><td>Home</td><td>Decor Essentials</td><td>15% Off</td></tr>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h2>Why Shoply?</h2>
+                <ul>
+                    <li>Free shipping over $50</li>
+                    <li>Easy 30-day returns</li>
+                    <li>Secure checkout</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="account" class="panel">
+            <h2>Create an Account</h2>
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Password">
+                <select>
+                    <option>Shopping for myself</option>
+                    <option>Shopping for my family</option>
+                    <option>Business purchase</option>
+                </select>
+                <button type="submit">Create Account</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
